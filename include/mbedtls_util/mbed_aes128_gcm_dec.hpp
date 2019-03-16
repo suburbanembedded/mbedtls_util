@@ -1,6 +1,6 @@
 #pragma once
 
-#include "mbed_aes128_gcm.hpp"
+#include "mbedtls_util/mbed_aes128_gcm.hpp"
 
 class mbed_aes128_gcm_dec : public mbed_aes128_gcm
 {

@@ -1,8 +1,8 @@
-#include "AES_GCM_aux_data.hpp"
+#include "mbedtls_util/AES_GCM_aux_data.hpp"
 
 #include "common_util/Byte_util.hpp"
 
-#include "tinyxml2_helper.hpp"
+#include "tinyxml2_util/tinyxml2_helper.hpp"
 
 bool AES_GCM_aux_data::to_xml(tinyxml2::XMLDocument* const doc) const
 {

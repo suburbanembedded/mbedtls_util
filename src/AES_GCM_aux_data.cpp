@@ -11,6 +11,16 @@
 
 #include "tinyxml2_util/tinyxml2_helper.hpp"
 
+bool AES_GCM_aux_data::set_iv(const char iv_str[])
+{
+	return mbed_aes128_gcm::iv_from_str(iv_str, &m_iv);
+}
+
+bool AES_GCM_aux_data::set_tag(const char tag_str[])
+{
+	return mbed_aes128_gcm::tag_from_str(tag_str, &m_tag);
+}
+
 bool AES_GCM_aux_data::to_xml(tinyxml2::XMLDocument* const doc) const
 {
 	doc->Clear();
@@ -67,17 +77,9 @@ bool AES_GCM_aux_data::from_xml(const tinyxml2::XMLDocument& doc)
 			return false;
 		}
 
-		if(strnlen(iv_str, 32) != 32)
+		if(!set_iv(iv_str))
 		{
 			return false;
-		}
-
-		for(size_t i = 0; i < 16; i++)
-		{
-			if(!Byte_util::hex_to_byte(iv_str + i*2, m_iv.data() + i))
-			{
-				return false;
-			}
 		}
 	}
 
@@ -88,17 +90,9 @@ bool AES_GCM_aux_data::from_xml(const tinyxml2::XMLDocument& doc)
 			return false;
 		}
 		
-		if(strnlen(tag_str, 32) != 32)
+		if(!set_tag(tag_str))
 		{
 			return false;
-		}
-
-		for(size_t i = 0; i < 16; i++)
-		{
-			if(!Byte_util::hex_to_byte(tag_str + i*2, m_tag.data() + i))
-			{
-				return false;
-			}
 		}
 	}
 

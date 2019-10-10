@@ -35,6 +35,10 @@ public:
 		return m_key;
 	}
 
+	static bool key_from_str(const char key_str[], KeyType* const out_key);
+	static bool iv_from_str(const char iv_str[], IVType* const out_iv);
+	static bool tag_from_str(const char tag_str[], TagType* const out_tag);
+
 	void set_iv(const IVType& iv)
 	{
 		m_iv = iv;

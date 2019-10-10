@@ -1,3 +1,11 @@
+
+/**
+ * @brief mbed_aes128_gcm_enc
+ * @author Jacob Schloss <jacob@schloss.io>
+ * @copyright Copyright (c) 2019 Jacob Schloss. All rights reserved.
+ * @license Licensed under the 3-Clause BSD license. See LICENSE for details
+*/
+
 #include "mbedtls_util/mbed_aes128_gcm_enc.hpp"
 
 bool mbed_aes128_gcm_enc::initialize(unsigned char* add_data, size_t add_data_len)

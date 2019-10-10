@@ -1,3 +1,10 @@
+/**
+ * @brief mbed_aes128_gcm_dec
+ * @author Jacob Schloss <jacob@schloss.io>
+ * @copyright Copyright (c) 2019 Jacob Schloss. All rights reserved.
+ * @license Licensed under the 3-Clause BSD license. See LICENSE for details
+*/
+
 #pragma once
 
 #include "mbedtls_util/mbed_aes128_gcm.hpp"

@@ -1,3 +1,10 @@
+/**
+ * @brief AES_GCM_aux_data
+ * @author Jacob Schloss <jacob@schloss.io>
+ * @copyright Copyright (c) 2019 Jacob Schloss. All rights reserved.
+ * @license Licensed under the 3-Clause BSD license. See LICENSE for details
+*/
+
 #include "mbedtls_util/AES_GCM_aux_data.hpp"
 
 #include "common_util/Byte_util.hpp"
